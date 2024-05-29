@@ -1,0 +1,13 @@
+<diagram program="umletino" version="15.1"><zoom_level>10</zoom_level><element><id>UMLClass</id><coordinates><x>20</x><y>20</y><w>210</w><h>210</h></coordinates><panel_attributes>Point
+--
+-x : int
+-y : int
+
+--
++Point()				&lt;&lt;Constructor&gt;&gt;
++Point(x: int, y : int)		&lt;&lt;Constructor&gt;&gt;
++getX() : int
++setX(x : int) : void
++getY() : int
++setY(y : int) : void
++pointToString() : String</panel_attributes><additional_attributes></additional_attributes></element></diagram>

@@ -1,0 +1,23 @@
+package gr.aueb.cf.ch8;
+
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
+public class Ex06TryWithResourcesApp {
+
+    public static void main(String[] args) {
+        int num = 0;
+
+
+        // Δεύτερος τρόπος
+        // Scanner in = new Scanner(System.in)
+        // try (in) {
+
+        try (Scanner in = new Scanner(System.in)) {
+            System.out.println("Insert a num");
+            num = in.nextInt();
+        } catch (InputMismatchException e) {
+            e.printStackTrace();
+        }
+    }
+}
