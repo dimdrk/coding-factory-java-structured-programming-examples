@@ -42,4 +42,8 @@ public class Point3D extends Point2D {
         super.reset();
         z = 0;
     }
+
+    public void sayHi() {
+        System.out.println("Hi from point3");
+    }
 }
