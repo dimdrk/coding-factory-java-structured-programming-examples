@@ -45,6 +45,16 @@ public class Account extends IdentifiableEntity {
         this.balance = balance;
     }
 
+    @Override
+    public String toString() {
+        return "Account{" +
+                "uuid= " + getUuid() +
+                "iban='" + iban + '\'' +
+                ", holder=" + holder +
+                ", balance=" + balance +
+                '}';
+    }
+
     /**
      * Deposits a certain amount od money into user's
      * {@link Account}, thus increasing the {@link Account#balance}.
@@ -106,6 +116,15 @@ public class Account extends IdentifiableEntity {
             System.err.println("Service error: " + e.getMessage() + ", " + LocalDateTime.now());
             throw e;
         }
+    }
+
+    /**
+     * Returns the {@link Account#balance}.
+     *
+     * @return  the balance.
+     */
+    public double getAccountBalance() {
+        return balance;
     }
 
     protected boolean isSsnValid(String ssn) {
