@@ -17,7 +17,8 @@ public class Account extends IdentifiableEntity {
 
     public Account(String iban, User holder, double balance) {
         this.iban = iban;
-        this.holder = holder;
+        // this.holder = holder;
+        this.holder = new User(holder);
         this.balance = balance;
     }
 
