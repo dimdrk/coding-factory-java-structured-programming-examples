@@ -13,7 +13,7 @@ public class GarageImpl implements IGarage {
     @Override
     public void addCar(String car) throws GarageIsFullException {
         try {
-            if (isFull()) throw new GarageIsFullException("Is full");
+            if (isFull()) throw new GarageIsFullException("IsFull");
             storage.push(car);
             length++;
             // logging
@@ -26,7 +26,7 @@ public class GarageImpl implements IGarage {
     @Override
     public String removeCar() throws GarageIsEmptyException {
         try {
-            if (isEmpty()) throw new GarageIsEmptyException("Is empty");
+            if (isEmpty()) throw new GarageIsEmptyException("IsEmpty");
             // logging
             length--;
             return storage.pop();
