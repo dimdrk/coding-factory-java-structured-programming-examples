@@ -2,6 +2,7 @@ package gr.aueb.cf.ch20.lambdas;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Consumer;
 import java.util.function.Predicate;
 
 public class Main {
@@ -24,9 +25,17 @@ public class Main {
 
         List<Teacher> teachersList = getFilteredTeachers(teachers, teacher -> teacher.getTeacherId() <= 3);
 
-        for (Teacher teacher : teachersList) {
-            teacher.printInstanceTeacher();
-        }
+//        for (Teacher teacher : teachersList) {
+//            teacher.printInstanceTeacher();
+//        }
+
+        printTeachers(teachersList, teacher -> teacher.printInstanceTeacher());
+        printTeachers(teachersList, teacher -> Teacher.printStaticTeacher(teacher));
+        printTeachers(teachersList, teacher -> System.out.println(teacher));
+
+        printTeachers(teachersList, Teacher::printInstanceTeacher);
+        printTeachers(teachersList, Teacher::printStaticTeacher);
+        printTeachers(teachersList, System.out::println);
     }
 
 //    public static List<Teacher> getFilteredTeachers(List<Teacher> teachers, ITeacherFilter filter) {
@@ -51,6 +60,12 @@ public class Main {
         }
 
         return teachersToReturn;
+    }
+
+    public static void printTeachers(List<Teacher> teachers, Consumer<Teacher> consumer) {
+        for (Teacher teacher : teachers) {
+            consumer.accept(teacher);
+        }
     }
 
     public static void filterAndPrintEqualsId(List<Teacher> teachers, int id) {
