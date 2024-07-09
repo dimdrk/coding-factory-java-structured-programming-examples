@@ -10,6 +10,9 @@ public class Main {
 
         System.out.println(anySymbolAndDigit("!4"));    // true
 
+        String str = regexSwap("Dimitris Drakopoulos");
+        System.out.println(str);
+
     }
 
     public static boolean isRed(String s) {
@@ -66,5 +69,20 @@ public class Main {
 
     public static boolean isEmail(String s) {
         return s.matches("\\w+\\.?\\w*@\\w+\\.[a-z]{2,4}");
+    }
+
+    public static String[] regexSplit(String s) {
+        String[] tokens = s.split("\\s+");
+        return  tokens;
+    }
+
+    public static String regexReplaceAll(String s) {
+        String strToReturn = s.replaceAll("\\s+", " ");
+        return strToReturn;
+    }
+
+    public static String regexSwap(String s) {
+        String strToReturn = s.replaceAll("(.*)\\s(.*)", "$2 $1");  // back-reference σε groups
+        return strToReturn;
     }
 }
