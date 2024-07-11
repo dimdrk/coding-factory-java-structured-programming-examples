@@ -23,6 +23,20 @@ public class CodingFrame extends JFrame {
             }
         });
 
+        JButton confirmBtn = new JButton("Confirm Button");
+        confirmBtn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                int answer = JOptionPane.showConfirmDialog(null, "Confirm message", "Confirm Title", JOptionPane.YES_NO_OPTION);
+                if (answer == JOptionPane.YES_OPTION) {
+                    JOptionPane.showMessageDialog(null, "Yes message", "Yes Title", JOptionPane.INFORMATION_MESSAGE);
+                } else {
+                    JOptionPane.showMessageDialog(null, "Error Message", "Error Title", JOptionPane.ERROR_MESSAGE);
+                }
+            }
+        });
+
         contentPane.add(messageBtn);
+        contentPane.add(confirmBtn);
     }
 }
