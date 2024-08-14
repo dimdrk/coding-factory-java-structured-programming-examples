@@ -7,7 +7,7 @@ import java.net.Socket;
 
 public class ConcurrentDateTimeServerApp {
 
-    private static final int PORT = 23;
+    private static final int PORT = 13;
 
     public static void main(String[] args) {
         try (ServerSocket servFd = new ServerSocket()) {
